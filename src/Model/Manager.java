@@ -1,5 +1,6 @@
 package Model;
 
+import java.util.Iterator;
 import java.util.List;
 
 public class Manager {
@@ -11,11 +12,20 @@ public class Manager {
 	}
 	
 	public void DisplayTopScoringMatches(){
-		//TODO: IMPLEMENT THIS
+		int i = 1;
+		Match highestScore = leagueMatches.get(0);
+		int totalGoals = highestScore.homeGoals+highestScore.awayGoals;
+		while (i < leagueMatches.size()) {
+			if (leagueMatches.get(i).homeGoals+leagueMatches.get(i).awayGoals>totalGoals) {
+				highestScore = leagueMatches.get(i);
+				totalGoals = highestScore.homeGoals+highestScore.awayGoals;
+			}
+		}
+		System.out.println("The highest scoring match is the match with ID "+highestScore.id);
 	}
-	public void DisplayTop5Players(){
-		//TODO: IMPLEMENT THIS
+	public void DisplayTop5Players(){	
 	}
+	
 	public void DisplayTopGoalie(){
 		//TODO: IMPLEMENT THIS
 	}

@@ -1,15 +1,16 @@
 package Model;
 
-import java.util.Iterator;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Manager {
 	List<Match> leagueMatches;
-	List<Team> leageTeams;
+	List<Team> leagueTeams;
 	
 	public Manager(){
-		//TODO: IMPLEMENT THIS TOO
-	}
+		leagueMatches = new ArrayList<Match>();
+		leagueTeams = new ArrayList<Team>();
+	} 
 	
 	public void DisplayTopScoringMatches(){
 		int i = 1;
@@ -32,8 +33,8 @@ public class Manager {
 	
 	public static void main(String args[]){
 		Manager m = new Manager();
-		m.DisplayTop5Players();
+		m.leagueMatches.add(new Match(new Team("Team 1"), new Team("Team 2"), 1));
+		m.leagueMatches.get(0).addHomeGoal();
 		m.DisplayTopScoringMatches();
-		m.DisplayTopGoalie();
 	}
 }

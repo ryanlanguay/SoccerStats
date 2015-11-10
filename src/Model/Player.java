@@ -4,14 +4,15 @@ import java.util.List;
 
 public class Player {
 	
-	int id;
+	String name;
 	int position;
 	List<Infractions> pInfractions;
 	List<Shot> pShots;
 	
-	public Player(int ID, int Position){
-		id =ID;
-		position = Position;
+	public Player(String Name, int Position){
+		name =Name;
+		if (Position>=1 && Position<=11) position = Position;
+		if (position==0) System.out.println("Position entered is invalid and is not set; choose a # between 1 and 11");
 	}
 	
 	public void addInfraction(Infractions f){
@@ -22,8 +23,8 @@ public class Player {
 		pShots.add(s);
 	}
 	
-	public int getID(){
-		return id;
+	public String getName(){
+		return name;
 	}
 	public int getPosition(){
 		return position;
@@ -34,5 +35,5 @@ public class Player {
 	public List<Shot> getShots(){
 		return pShots;
 	}
-
+	
 }

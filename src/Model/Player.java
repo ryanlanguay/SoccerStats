@@ -1,5 +1,6 @@
 package Model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
@@ -13,6 +14,8 @@ public class Player {
 		name =Name;
 		if (Position>=1 && Position<=11) position = Position;
 		if (position==0) System.out.println("Position entered is invalid and is not set; choose a # between 1 and 11");
+		pInfractions = new ArrayList<Infractions>();
+		pShots = new ArrayList<Shot>();
 	}
 	
 	public void addInfraction(Infractions f){
